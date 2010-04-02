@@ -8,7 +8,8 @@ function Notification() {
  * @param {number} duration The duration in ms to vibrate for.
  * @param {number} intensity The intensity of the vibration
  */
-Notification.prototype.vibrate = function (duration, intensity) {
+Notification.prototype.vibrate = function(duration, intensity) {
+  /*
 	//the intensity for palm is inverted; 0=high intensity, 100=low intensity
 	//this is opposite from our api, so we invert
 	if (isNaN(intensity) || intensity > 100 || intensity <= 0)
@@ -24,6 +25,8 @@ Notification.prototype.vibrate = function (duration, intensity) {
 			'duration': duration
 		},
 	}, false);
+	*/
+	PhoneGap.sceneController.playSoundNotification('vibrate', null, duration);
 }
 
 Notification.prototype.beep = function () {
